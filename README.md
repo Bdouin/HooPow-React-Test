@@ -20,7 +20,6 @@ In our platform, they share, they play, they learn, and they grow.
 As you can imagine, this endeavor is as demanding as it is rewarding. Hence, if you believe you have the potential to contribute to this endeavor with your React skills, we invite you to join us 💪🏻
 
 <br />
-<br />
 
 ## **Showtime !**
 
