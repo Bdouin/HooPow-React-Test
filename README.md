@@ -11,9 +11,9 @@
 <!-- PROJECT LOGO -->
 # **Assalamu Alaikum!**
 
-We, the HooPow family, are looking for new talents to help us in achieving what we believe is a lofty goal. 
+The HooPow family is looking for new talents to help  in achieving what we believe is a lofty goal. 
 
-As HooPow, we are aiming to provide a platform for the children to learn their values, have a comprehensive understanding of fundamental tenets of Islam, and to be able to enjoy in their halaal internet zones. 
+As HooPow, we aim to provide a platform for children to learn their values, acquire a comprehensive understanding of the fundamental tenets of Islam, and  enjoy halaal internet time. 
 
 In our platform, they share, they play, they learn, and they grow. 
 
@@ -31,7 +31,7 @@ We prepared a small and fun challenge for you. Please read the guidelines below 
 
 Please refer to the XD file in the project folder. In the XD file, you will find the visual representation of what we want you to implement. Examine it carefully, make sure that you caught the small details and start hacking! 
 
-For this purpose, we have provided APIs that you can use to access the data required populate the project.
+For this purpose, we have provided APIs that you can use to access the data required to populate the project.
 
 
 
