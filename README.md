@@ -45,7 +45,7 @@ Here are the API endpoints via which you can access the data :
 
 
 <figure class="video_container">
-	<iframe src="https://www.youtube.com/embed/5SOiL_jkzBg?controls=0"</iframe>
+	<iframe src="https://www.youtube.com/embed/5SOiL_jkzBg?controls=0"></iframe>
 </figure>
 
 
