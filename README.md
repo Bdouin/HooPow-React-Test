@@ -83,4 +83,3 @@ Here are the API endpoints via which you can access the data :
 
 
 ![banner](https://drive.google.com/uc?export=view&id=1SACvqhDqhHDbIjusKxcJ3aCATtHGqDyn)
-
