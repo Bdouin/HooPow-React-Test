@@ -44,7 +44,7 @@ Here are the API endpoints via which you can access the data :
 
 
 
-[![Check the Demo!](http://img.youtube.com/vi/5SOiL_jkzBg/0.jpg)](https://www.youtube.com/watch?v=5SOiL_jkzBg "Muslim Show Video Demonstration")
+[![Check the Demo!](https://drive.google.com/uc?export=view&id=1NFNHsg21SXFMWKXsh5p3_8Ydh-pDF3fZ)](https://www.youtube.com/watch?v=5SOiL_jkzBg "Muslim Show Video Demonstration")
 
 
 #### **Steps**
