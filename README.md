@@ -42,6 +42,8 @@ Here are the API endpoints via which you can access the data :
 - Get the [Images](https://d1628i5d9ecuu5.cloudfront.net)
 
 
+##  Here we also have prepared a demo video  👇
+<br />
 
 
 [![Check the Demo!](https://drive.google.com/uc?export=view&id=1NFNHsg21SXFMWKXsh5p3_8Ydh-pDF3fZ)](https://www.youtube.com/watch?v=5SOiL_jkzBg "Muslim Show Video Demonstration")
@@ -61,17 +63,20 @@ Here are the API endpoints via which you can access the data :
 
 <br />
 
-> You have seven(7) days to finalize the project and submit PR.
+*  XD file has some components that video does not show. Please make sure you implement the XD file and use video only as final reference.
 > 
-> Responsiveness is a vital part to our project.
+*  You have seven(7) days to finalize the project and submit PR.
 > 
-> We expect you to keep fidelity to the provided XD file with regards to design.
+*  Responsiveness is a vital part to our project.
 > 
-> You can always ping us if you have any questions.
+* We expect you to keep fidelity to the provided XD file with regards to design.
 > 
-> If you can create a documentation, that would be nice too.
+* You can always ping us if you have any questions.
+> 
+* If you can create a documentation, that would be nice too.
 
 
+<br />
 <br />
 
 
