@@ -74,7 +74,8 @@ Here are the API endpoints via which you can access the data :
 * You can always ping us if you have any questions.
 > 
 * If you can create a documentation, that would be nice too.
-
+> 
+* If there is any rendering problems on this page, please refresh the page with cache-reset.(Cmd+shift+r on Mac or Ctrl+shift+r on Windows or Linux)
 
 <br />
 <br />
