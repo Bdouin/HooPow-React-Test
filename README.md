@@ -44,9 +44,7 @@ Here are the API endpoints via which you can access the data :
 
 
 
-<figure>
-	<iframe src="https://www.youtube.com/embed/5SOiL_jkzBg?controls=0" frameborder="0" allowfullscreen="true"> </iframe>
-</figure>
+[![Check the Demo!](http://img.youtube.com/vi/5SOiL_jkzBg/0.jpg)](https://www.youtube.com/watch?v=5SOiL_jkzBg "Muslim Show Video Demonstration")
 
 
 #### **Steps**
