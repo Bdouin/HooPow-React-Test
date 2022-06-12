@@ -39,7 +39,7 @@ Here are the API endpoints via which you can access the data :
 
 - List all [Comic Strips](https://api.jsonbin.io/b/60d15d6c8ea8ec25bd12c083)
 - Details for [Comic Strips](https://api.jsonbin.io/b/60d15d485ed58625fd1658cb)
-- Get the [Images](https://d1628i5d9ecuu5.cloudfront.net)
+- Get the [Images](https://d2hkgoif6etp77.cloudfront.net)
 
 
 ##  Here we also have prepared a demo video  👇
