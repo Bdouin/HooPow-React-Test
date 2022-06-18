@@ -1,0 +1,271 @@
+/* ? General */
+
+.sidebar a{
+    font-weight: bold;
+}
+
+.sidebar hr{
+    border:none;
+    height: 1px;
+    background:rgba(0,0,0,0.2);
+}
+
+/* ? Menu et Logo */
+
+.menu-logo-container{
+    display: flex;
+    justify-content:center;
+    position: relative;
+}
+.menu, .logo{
+    margin:0 5px;
+}
+
+/* BD du jour */
+
+.bd-du-jour{
+    margin-top:calc(5px + 1vw);
+    text-align: center;
+    background-color:#51aabc;
+    padding: 10px 0 20px;
+    border-radius: 10px;
+    font-size: calc(8px + 0.7vw);
+    line-height: 140%;
+}
+.bd-du-jour p span{
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+/* muslimshow */
+
+.muslimshow{
+    display: block;
+    width: 90%;
+    max-height: calc(10vw + 20px);
+    margin:calc(5px + 1.5vw) auto;
+}
+
+/* abonnement */
+
+.subscription-container{
+    height: 45%;
+    background-color: #51aabc;
+    border-radius: 15px;
+    position: relative;
+    padding: 10px;
+    text-align: center;
+}
+
+.subscription-container p{
+    text-transform: uppercase;
+}
+.subscription-container p:nth-child(1){
+    width: 100%;
+    font-size: calc(8px + 0.8vw);
+}
+.subscription-container a{
+    display: inline-block;
+    margin:0 auto;
+    padding:2px 8px;
+    background-color:#ffc600;
+    color:#000;
+    margin:5px 0;
+    text-transform: uppercase;
+    font-size: calc(8px + 0.6vw);
+}
+.subscription-container p:nth-child(3){
+    position: absolute;
+    bottom:30%;
+    left:15%;
+    font-size: calc(5px + 0.5vw);
+}
+.boy-subscribe{
+    position: absolute;
+    right:0;
+    bottom:-1%;
+    width:calc(25% + 5vw);
+    height:calc(45% + 5vw);
+}
+
+/* ? Navigation toggle */
+
+.navigationCheckbox{
+    display: none;
+}
+
+.navigationBtn{
+    display: block;
+    width:calc(20px + 2vw);
+    height:calc(20px + 2vw);
+    background-color: #fff;
+    cursor: pointer;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.navigationIcon{
+    position: relative;
+    margin-top:calc(10px + 1vw);
+    width: 50%;
+    height: 2px;
+    background-color:#51aabc;
+    display: inline-block;
+}
+.navigationIcon::before, .navigationIcon::after{
+    content:'';
+    width:100%;
+    height: 2px;
+    background-color:#51aabc;
+    position:absolute;
+    left:0;
+    transition: transform 0.3s, top 0.3s 0.1s;
+}
+.navigationIcon::before{
+    top:-8px;
+}
+.navigationIcon::after{
+    top:8px;
+}
+
+.nav{
+    position: absolute;
+    top:120%;
+    left:0;
+    width: 100%;
+    height: 0;
+    background-color: #fff;
+    border-radius: 15px;
+    transition: height 0.5s;
+    text-transform: uppercase;
+    font-family: 'Karla Extrabold', Arial, Helvetica, sans-serif;
+    padding:0 10px;
+    overflow: hidden;
+    z-index: 500;
+}
+
+.links-bloc a{
+    margin:calc(10px + 0.6vw) 0;
+    text-align: center;
+    width: 100%;
+    background-color: #dfdfdf;
+    padding: 7px;
+    border-radius: 20px;
+    color:#333;
+    font-size: calc(8px + 0.4vw);
+}
+.links-bloc a.active{
+    background-color: #333;
+    color:#dfdfdf
+}
+.links-bloc a:hover{
+    background-color: #333;
+    color:#dfdfdf
+}
+
+.contact-bloc{
+    margin:25px 0;
+    font-size: calc(8px + 0.4vw);
+}
+.contact{
+    color:#555;
+    display: flex;
+    align-items: center;
+    margin-bottom: 7px;
+}
+.contact:nth-child(2){
+    margin-bottom: 12px;
+}
+.contact svg{
+    margin-right: 15px;
+    width:calc(25px + 1.5vw);
+    height:calc(25px + 1.5vw);
+}
+
+/* animations */
+
+.navigationCheckbox:checked ~ .nav{
+    height:85vh;
+}
+
+.navigationCheckbox:checked + .navigationBtn .navigationIcon{
+    background-color: transparent;
+}
+.navigationCheckbox:checked + .navigationBtn .navigationIcon::before{
+    top:0;
+    transform: rotate(45deg);
+    transition: transform 0.3s;
+}
+.navigationCheckbox:checked + .navigationBtn .navigationIcon::after{
+    top:0;
+    transform: rotate(-45deg);
+    transition: transform 0.3s;
+}
+
+.logo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo img{
+    width: 90%;
+}
+
+
+/* ? Media queries */
+
+@media screen and (max-width:1100px){
+    .bd-du-jour{
+        padding: 5px 5px 15px;
+        font-size: calc(6px + 0.7vw);
+    }
+
+    .navigationIcon::before{
+        top:-6px;
+    }
+    .navigationIcon::after{
+        top:6px;
+    }
+
+    .muslimshow{
+        display: block;
+        width: 80%;
+        margin:calc(5px + 1vw) auto;
+    }
+}
+
+@media screen and (max-width:600px){
+    .logo img{
+        width: 100%;
+    }
+
+    .subscription-container p:nth-child(3){
+        bottom:20%;
+        left:7%;
+        font-size: calc(4px + 0.5vw);
+    }
+    .boy-subscribe{
+        bottom:-5%;
+    }
+
+    .navigationIcon::before{
+        top:-5px;
+    }
+    .navigationIcon::after{
+        top:5px;
+    }
+
+    .nav{
+        width:calc(100% + 15px);
+    }
+
+    .navigationCheckbox:checked ~ .nav{
+        height:70vh;
+    }
+
+    .contact-bloc{
+        margin:20px 0;
+        font-size: calc(6px + 0.4vw);
+    }
+}
