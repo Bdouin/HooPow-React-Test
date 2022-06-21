@@ -21,22 +21,6 @@
     margin:0 5px;
 }
 
-/* BD du jour */
-
-.bd-du-jour{
-    margin-top:calc(5px + 1vw);
-    text-align: center;
-    background-color:#51aabc;
-    padding: 10px 0 20px;
-    border-radius: 10px;
-    font-size: calc(8px + 0.7vw);
-    line-height: 140%;
-}
-.bd-du-jour p span{
-    text-transform: uppercase;
-    font-weight: bold;
-}
-
 /* muslimshow */
 
 .muslimshow{
@@ -48,7 +32,36 @@
 
 /* abonnement */
 
-.subscription-container{
+/* home */
+
+.subscription-container-home{
+    padding: 10px 10px 5px;
+    text-align: center;
+}
+
+.subscription-container-home p{
+    text-transform: uppercase;
+    width: 100%;
+    font-size: calc(8px + 1vw);
+    margin-bottom: 1vw;
+}
+
+.production-container{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.production-container a{
+    flex-basis:30%;
+    margin:calc(2px + 0.1vw)
+}
+.production-container a img{
+    width: 100%;
+}
+
+/* bdstart */
+
+.subscription-container-bdstart{
     height: 45%;
     background-color: #51aabc;
     border-radius: 15px;
@@ -57,24 +70,26 @@
     text-align: center;
 }
 
-.subscription-container p{
+.subscription-container-bdstart p{
     text-transform: uppercase;
 }
-.subscription-container p:nth-child(1){
+.subscription-container-bdstart p:nth-child(1){
     width: 100%;
     font-size: calc(8px + 0.8vw);
 }
-.subscription-container a{
+.subscription-container-bdstart a{
     display: inline-block;
     margin:0 auto;
-    padding:2px 8px;
+    padding:2px 5px;
     background-color:#ffc600;
     color:#000;
     margin:5px 0;
     text-transform: uppercase;
     font-size: calc(8px + 0.6vw);
+    font-weight: 400;
+    border-radius: 2px;
 }
-.subscription-container p:nth-child(3){
+.subscription-container-bdstart p:nth-child(3){
     position: absolute;
     bottom:30%;
     left:15%;
@@ -88,6 +103,20 @@
     height:calc(45% + 5vw);
 }
 
+/* Current bd */
+
+.current-bd{
+    width: 70%;
+    margin:0 auto calc(-30px - 1.5vw);
+    text-align: center;
+}
+.current-bd img{
+    width: 100%;
+}
+.current-bd h3{
+    font-size: calc(10px + 0.5vw);
+}
+
 /* ? Navigation toggle */
 
 .navigationCheckbox{
@@ -95,7 +124,7 @@
 }
 
 .navigationBtn{
-    display: block;
+    display: flex;
     width:calc(20px + 2vw);
     height:calc(20px + 2vw);
     background-color: #fff;
@@ -105,8 +134,8 @@
 }
 
 .navigationIcon{
+    margin: auto;
     position: relative;
-    margin-top:calc(10px + 1vw);
     width: 50%;
     height: 2px;
     background-color:#51aabc;
@@ -216,11 +245,6 @@
 /* ? Media queries */
 
 @media screen and (max-width:1100px){
-    .bd-du-jour{
-        padding: 5px 5px 15px;
-        font-size: calc(6px + 0.7vw);
-    }
-
     .navigationIcon::before{
         top:-6px;
     }
@@ -235,12 +259,27 @@
     }
 }
 
+@media screen and (max-width:800px){
+    .navigationCheckbox:checked ~ .nav{
+        height:75vh;
+    }
+
+    .production-container a{
+        flex-basis:28%;
+    }
+}
+
+
 @media screen and (max-width:600px){
     .logo img{
         width: 100%;
     }
 
-    .subscription-container p:nth-child(3){
+    .subscription-container-bdstart p:nth-child(1){
+        font-size: calc(6px + 0.8vw);
+    }
+
+    .subscription-container-bdstart p:nth-child(3){
         bottom:20%;
         left:7%;
         font-size: calc(4px + 0.5vw);
@@ -267,5 +306,126 @@
     .contact-bloc{
         margin:20px 0;
         font-size: calc(6px + 0.4vw);
+    }
+
+    .links-bloc a{
+        margin:calc(10px + 0.6vw) 0;
+        padding: 5px;
+        border-radius: 15px;
+        font-size: calc(5px + 0.4vw);
+    }
+
+    .current-bd{
+        width: 80%;
+    }
+
+    .current-bd h3{
+        font-size: calc(7px + 0.5vw);
+    }
+}
+
+@media screen and (max-width:450px){
+    .subscription-container-bdstart p:nth-child(1){
+        width: 100%;
+        font-size: calc(6px + 0.8vw);
+    }
+
+    .navigationCheckbox:checked ~ .nav{
+        height:50vh;
+    }
+
+    .contact-bloc{
+        margin:12px 0;
+        font-size: calc(4px + 0.4vw);
+    }
+
+    .contact svg{
+        margin-right: 10px;
+        width:calc(15px + 1.5vw);
+        height:calc(15px + 1.5vw);
+    }
+
+    .production-container a{
+        flex-basis:25%;
+        margin:calc(1.5px + 0.1vw)
+    }
+
+    .subscription-container-home{
+        padding: 10px 2px 0;
+    }
+    
+    .subscription-container-home p{
+        font-size: calc(7px + 1vw);
+        margin-bottom: 1.5vw;
+    }
+
+    .navigationBtn{
+        width:calc(15px + 2vw);
+        height:calc(15px + 2vw);
+        border-radius: 5px;
+    }
+
+    .navigationIcon{
+        height: 1px;
+    }
+    .navigationIcon::before, .navigationIcon::after{
+        height: 1px;
+    }
+    .navigationIcon::before{
+        top:-4px;
+    }
+    .navigationIcon::after{
+        top:4px;
+    }
+}
+
+/* IPAD */
+
+@media screen and (min-width:800px) and (max-width:850px) and (min-height:1100px) and (max-height:1200px){
+    .subscription-container-bdstart{
+        height: 40%;
+        padding: 15px;
+    }
+    .subscription-container-bdstart p:nth-child(1){
+        font-size: calc(12px + 0.8vw);
+    }
+    .subscription-container-bdstart a{
+        padding:3px 9px;
+        font-size: calc(10px + 0.6vw);
+    }
+    .subscription-container-bdstart p:nth-child(3){
+        left:7%;
+        font-size: calc(7px + 0.5vw);
+    }
+    .boy-subscribe{
+        bottom:-4%;
+        width:calc(30% + 5vw);
+        height:calc(50% + 5vw);
+    }
+}
+
+/* IPAD MINI */
+
+
+@media screen and (min-width:700px) and (max-width:800px) and (min-height:1000px) and (max-height:1050px){
+    .subscription-container-bdstart{
+        height: 40%;
+        padding: 15px;
+    }
+    .subscription-container-bdstart p:nth-child(1){
+        font-size: calc(10px + 0.8vw);
+    }
+    .subscription-container-bdstart a{
+        padding:3px 9px;
+        font-size: calc(10px + 0.6vw);
+    }
+    .subscription-container-bdstart p:nth-child(3){
+        left:7%;
+        font-size: calc(7px + 0.5vw);
+    }
+    .boy-subscribe{
+        bottom:-3.5%;
+        width:calc(30% + 5vw);
+        height:calc(50% + 5vw);
     }
 }

@@ -1,4 +1,5 @@
 import React, {useState, useContext, useEffect} from 'react';
+import {v4 as uuidv4} from 'uuid';
 import { ContextApp } from '../../context/context';
 import './Sidebar.css';
 import {ReactComponent as Envelope} from '../../assets/sidebar-assets/envelope.svg';
@@ -10,20 +11,21 @@ import Logo from '../../assets/sidebar-assets/logo-hoopow.png';
 
 export default function Sidebar() {
 
-    const {displays, updateDisplays} = useContext(ContextApp);
+    const {displays, updateDisplays, dataBd} = useContext(ContextApp);
+    const productionImages = ["AWLAD", "FOULANE", "MSHOW", "QUIZZBDOUIN", "GUIDES", "MECCA", "INTRUS", "ASTEROID", "FOULANE2"];
 
   return (
     <div className='sidebar'>
         <div className="menu-logo-container">
             <div className="menu">
-                <input type="checkbox" class="navigationCheckbox" id="navi" />
-                <label htmlFor="navi" class="navigationBtn">
+                <input type="checkbox" className="navigationCheckbox" id="navi" />
+                <label htmlFor="navi" className="navigationBtn">
                     <span className="navigationIcon"></span>
                 </label>
 
                 <nav className="nav">
                     <div className="links-bloc">
-                        <a class="active" href="#">Myyagis</a>
+                        <a className="active" href="#">Myyagis</a>
                         <a href="#">Mon espace membre</a>
                         <a href="#">Offrir un abonnement</a>
                     </div>
@@ -53,19 +55,32 @@ export default function Sidebar() {
                 <img src={Logo} alt="Logo de HooPow" />
             </div>
         </div>
+        
+        {displays.stage === "home" && <Muslimshow className="muslimshow" />}
 
-        <div className="bd-du-jour">
-            <p>Disponible gratuitement :<br/><span>La bd du jour</span></p>
-        </div>
+        {displays.stage === "home" && <div className="subscription-container-home">
+            <p>Soutenez la production en vous abonnant !</p>
+            <div className="production-container">
+                {productionImages.map(item => (
+                    <a key={uuidv4()} href="#">
+                        <img src={process.env.PUBLIC_URL + `/images/${item}.png`} alt={item} />
+                    </a>
+                ))}
+            </div>
+        </div>}
 
-        <Muslimshow className="muslimshow" />
+        {(dataBd.length !== 0 && displays.stage !== "home" && !displays.fullScreen) && <div className='current-bd'>
+            <img src={'https://d2hkgoif6etp77.cloudfront.net/' + dataBd[displays.activeKey - 1].imageHomepage} alt={dataBd[displays.activeKey - 1].name} />
+            <h3>{dataBd[displays.activeKey - 1].name.charAt(0) + dataBd[displays.activeKey - 1].name.toLowerCase().slice(1)}</h3>
+        </div>}
 
-        <div className="subscription-container">
+        {displays.stage === "bdStart" && <div className="subscription-container-bdstart">
             <p>Soutenez la production en vous abonnant !</p>
             <a href="#">S'abonner</a>
             <p>Déjà abonné ?<br/>Connectez-Vous</p>
-            <Boy class="boy-subscribe" />
-        </div>
+            <Boy className="boy-subscribe" />
+        </div>}
+        
     </div>
   )
 }

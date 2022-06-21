@@ -59,16 +59,19 @@ a{
 }
 
 .main-content{
+  display: flex;
   width:calc(85% - 100px);
+  padding-right:calc(1.3vw + 5px);
+  overflow: hidden;
+  position: relative;
 }
-
 
 
 /* ? Media queries */
 
 @media screen and (max-width:1100px) {
   .sidebar{
-    padding:7px 10px;
+    padding:10px 10px;
   }
 }
 
