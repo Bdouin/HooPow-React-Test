@@ -62,7 +62,7 @@
 /* bdstart */
 
 .subscription-container-bdstart{
-    height: 45%;
+    height:calc(25% + 10vw);
     background-color: #51aabc;
     border-radius: 15px;
     position: relative;
@@ -74,20 +74,23 @@
     text-transform: uppercase;
 }
 .subscription-container-bdstart p:nth-child(1){
-    width: 100%;
+    width: 90%;
+    margin: 0 auto;
     font-size: calc(8px + 0.8vw);
 }
 .subscription-container-bdstart a{
     display: inline-block;
-    margin:0 auto;
+    margin:5px auto;
     padding:2px 5px;
     background-color:#ffc600;
     color:#000;
-    margin:5px 0;
     text-transform: uppercase;
     font-size: calc(8px + 0.6vw);
     font-weight: 400;
     border-radius: 2px;
+}
+.subscription-container-bdstart a:hover, .subscription-container-bdstart a:active{
+    background-color:#f3bf02;
 }
 .subscription-container-bdstart p:nth-child(3){
     position: absolute;
@@ -99,8 +102,8 @@
     position: absolute;
     right:0;
     bottom:-1%;
-    width:calc(25% + 5vw);
-    height:calc(45% + 5vw);
+    width:calc(20% + 5vw);
+    height:calc(40% + 5vw);
 }
 
 /* Current bd */
@@ -112,6 +115,7 @@
 }
 .current-bd img{
     width: 100%;
+    border-radius:3px;
 }
 .current-bd h3{
     font-size: calc(10px + 0.5vw);
@@ -215,6 +219,7 @@
 
 .navigationCheckbox:checked ~ .nav{
     height:85vh;
+    max-height:600px;
 }
 
 .navigationCheckbox:checked + .navigationBtn .navigationIcon{
@@ -241,10 +246,59 @@
     width: 90%;
 }
 
+/* Bloc btns */
+
+.btns-container{
+    margin:calc(15px + 0.5vw) 0 calc(20px + 2vw);
+}
+
+.btns-container button{
+    display: block;
+    background:#000;
+    color:#fff;
+    text-transform: uppercase;
+}
+
+.btns-container span{
+    display: block;
+}
+
+.btn-share{
+    margin:0 auto calc(20px + 2vw);
+    font-size:12px;
+}
+.share{
+    width: 80%;
+}
+
+button.btn-home-fs{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin:15px auto;
+    border:2px solid #fff;
+    width: 80%;
+    padding:calc(5px + 0.2vw);
+    border-radius: 50px;
+    font-size:calc(8px + 0.5vw);
+}
+.home-btn, .full-screen{
+    width: calc(5px + 1vw);
+    height: calc(5px + 1vw);
+}
+button.btn-home-fs > *{
+    margin:0 5px
+}
+
 
 /* ? Media queries */
 
 @media screen and (max-width:1100px){
+    .subscription-container-bdstart{
+        height:calc(25% + 10vw);
+
+    }
+
     .navigationIcon::before{
         top:-6px;
     }
@@ -257,20 +311,49 @@
         width: 80%;
         margin:calc(5px + 1vw) auto;
     }
+
+    .btn-share{
+        margin:0 auto calc(40px + 2.5vw);
+    }
+    .share{
+        width:70%;
+    }
+    .btn-share span{
+        margin-top:-5px;
+    }
 }
 
 @media screen and (max-width:800px){
     .navigationCheckbox:checked ~ .nav{
         height:75vh;
+        max-height:500px;
+
     }
 
     .production-container a{
         flex-basis:28%;
     }
+
+    .btn-share span{
+        margin-top:-10px;
+    }
+    .share{
+        width:55%;
+    }
+
+    .btn-share{
+        margin:0 auto calc(20px + 2vw);
+        font-size:10px;
+    }
+    
 }
 
 
 @media screen and (max-width:600px){
+    .subscription-container-bdstart{
+        padding:6px;
+    }
+
     .logo img{
         width: 100%;
     }
@@ -285,7 +368,7 @@
         font-size: calc(4px + 0.5vw);
     }
     .boy-subscribe{
-        bottom:-5%;
+        bottom:-3%;
     }
 
     .navigationIcon::before{
@@ -301,6 +384,7 @@
 
     .navigationCheckbox:checked ~ .nav{
         height:70vh;
+        max-height:400px;
     }
 
     .contact-bloc{
@@ -322,16 +406,39 @@
     .current-bd h3{
         font-size: calc(7px + 0.5vw);
     }
+
+    button.btn-home-fs{
+        margin:12px auto;
+        width: 95%;
+        padding:calc(5px + 0.1vw);
+        font-size:calc(6px + 0.5vw);
+    }
+    .home-btn, .full-screen{
+        width: calc(5px + 1.5vw);
+        height: calc(5px + 1.5vw);
+    }
+    button.btn-home-fs > *{
+        margin:0 3px;
+    
+    }
 }
 
 @media screen and (max-width:450px){
+    .subscription-container-bdstart a{
+        padding:1px 3px;
+        margin:0px auto;
+        text-transform: uppercase;
+        font-size: calc(6px + 0.6vw);
+    }
+
     .subscription-container-bdstart p:nth-child(1){
         width: 100%;
-        font-size: calc(6px + 0.8vw);
+        font-size: calc(6px + 0.5vw);
     }
 
     .navigationCheckbox:checked ~ .nav{
-        height:50vh;
+        height:45vh;
+        max-height:350px;
     }
 
     .contact-bloc{
@@ -377,7 +484,23 @@
     .navigationIcon::after{
         top:4px;
     }
+
+    .btn-share span{
+        margin-top:-15px;
+    }
+    .share{
+        width:35%;
+    }
+    .btn-share{
+        margin:0 auto calc(20px + 2.5vw);
+        font-size:8px;
+    }
+    button.btn-home-fs{
+        width: 100%;
+        padding:calc(3px + 0.1vw);
+    }
 }
+
 
 /* IPAD */
 
@@ -401,6 +524,17 @@
         bottom:-4%;
         width:calc(30% + 5vw);
         height:calc(50% + 5vw);
+    }
+
+    .btn-share{
+        margin:0 auto calc(60px + 2.5vw);
+        font-size:12px;
+    }
+    .share{
+        width:75%;
+    }
+    .btn-share span{
+        margin-top:0px;
     }
 }
 
@@ -427,5 +561,16 @@
         bottom:-3.5%;
         width:calc(30% + 5vw);
         height:calc(50% + 5vw);
+    }
+
+    .btn-share{
+        margin:0 auto calc(60px + 2.5vw);
+        font-size:12px;
+    }
+    .share{
+        width:75%;
+    }
+    .btn-share span{
+        margin-top:0px;
     }
 }

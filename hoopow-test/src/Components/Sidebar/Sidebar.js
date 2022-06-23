@@ -7,11 +7,14 @@ import {ReactComponent as Telegram} from '../../assets/sidebar-assets/telegram.s
 import {ReactComponent as Linkedin} from '../../assets/sidebar-assets/linkedin.svg';
 import {ReactComponent as Muslimshow} from '../../assets/sidebar-assets/muslimshow.svg';
 import {ReactComponent as Boy} from '../../assets/sidebar-assets/boy-subscribe.svg';
+import {ReactComponent as Share} from '../../assets/sidebar-assets/share.svg';
+import {ReactComponent as Home} from '../../assets/sidebar-assets/home-icon.svg';
+import {ReactComponent as FullScreen} from '../../assets/sidebar-assets/full-screen.svg';
 import Logo from '../../assets/sidebar-assets/logo-hoopow.png';
 
 export default function Sidebar() {
 
-    const {displays, updateDisplays, dataBd} = useContext(ContextApp);
+    const {displays, dataBd, handleDisplays} = useContext(ContextApp);
     const productionImages = ["AWLAD", "FOULANE", "MSHOW", "QUIZZBDOUIN", "GUIDES", "MECCA", "INTRUS", "ASTEROID", "FOULANE2"];
 
   return (
@@ -79,6 +82,21 @@ export default function Sidebar() {
             <a href="#">S'abonner</a>
             <p>Déjà abonné ?<br/>Connectez-Vous</p>
             <Boy className="boy-subscribe" />
+        </div>}
+
+        {((displays.stage === "bdMid" || displays.stage === "bdEnd") && !displays.fullScreen) && <div className="btns-container">
+            <button className='btn-share'>
+                <Share className='share' />
+                <span>Partager</span>
+            </button>
+            <button className='btn-home-fs' onClick={() => handleDisplays('full-screen', 'active')}>
+                <FullScreen className='full-screen' />
+                <span>Plein écran</span>
+            </button>
+            <button className='btn-home-fs' onClick={() => handleDisplays('home')}>
+                <Home className='home-btn' />
+                <span>Accueil</span>
+            </button>
         </div>}
         
     </div>
