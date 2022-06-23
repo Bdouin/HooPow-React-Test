@@ -18,7 +18,7 @@ export default function Sidebar() {
     const productionImages = ["AWLAD", "FOULANE", "MSHOW", "QUIZZBDOUIN", "GUIDES", "MECCA", "INTRUS", "ASTEROID", "FOULANE2"];
 
   return (
-    <div className='sidebar'>
+    <div className='sidebar' style={{display:displays.fullScreen && 'none'}}>
         <div className="menu-logo-container">
             <div className="menu">
                 <input type="checkbox" className="navigationCheckbox" id="navi" />

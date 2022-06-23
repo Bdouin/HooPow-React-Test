@@ -9,6 +9,12 @@
     position: relative;
     overflow: hidden;
 }
+.main-content-container.fullscreen{
+  height: 100%;
+  background: #000000;
+  margin:inherit;
+  padding-bottom:0;
+}
 
 /* home */
 
@@ -102,6 +108,10 @@
   height: calc(26vw + 110px);
   transform: translate(-50%,-50%);
 }
+.slider-wrapper.fullscreen{
+  width: 100vmin;
+  height:100%;
+}
 
 .slider-container{
   overflow: hidden;
@@ -130,11 +140,21 @@
   background-color:#4b4b4b;
   border-radius: 50%;
 }
+.btn-slider.fullscreen{
+  width: calc(40px + 2vw);
+  height: calc(40px + 2vw);
+}
 .btn-slider.btn-left{
   left:-25%;
 }
 .btn-slider.btn-right{
   right:-25%;
+}
+.btn-slider.btn-left.fullscreen{
+  left:-15%;
+}
+.btn-slider.btn-right.fullscreen{
+  right:-15%;
 }
 
 .chevron{
@@ -213,9 +233,23 @@
 }
 
 .aside-bd-item.second-group{
-  /* display: none; */
+  display: none;
 }
 
+/* btn close full screen */
+
+.close-fs{
+  position: absolute;
+  right:103%;
+  bottom:3%;
+  width: calc(20px + 3vw);
+  height: calc(20px + 3vw);
+  cursor: pointer;
+}
+.close-fs svg{
+  width: 100%;
+  height: 100%;
+}
 
 
 
@@ -263,9 +297,14 @@
   .aside-bd-item h3{
     font-size: calc(0.4vw + 4px);
   }
+
+  .slider-wrapper.fullscreen{
+    width: 80vmin;
+    height:80%;
+  }
 }
 
-@media screen and (max-width:800px){
+@media screen and (max-width:820px){
   .slider-wrapper{
     width: calc(20vw + 100px);
     height: calc(20vw + 100px);
@@ -279,7 +318,34 @@
     font-size: calc(0.4vw + 2px);
     margin-top: 0;
   }
+
+  .slider-wrapper.fullscreen{
+    width: 70vmin;
+    height:70%;
+  }
   
+  .btn-slider.fullscreen{
+    top:-10%;
+    transform: translateY(-50%);
+  }
+
+  .btn-slider.btn-left.fullscreen{
+    left:0;
+  }
+  .btn-slider.btn-right.fullscreen{
+    right:inherit;
+    transform: translateY(-50%) translateX(120%);
+  }
+
+  .btn-slider.fullscreen{
+    width: calc(25px + 2vw);
+    height: calc(25px + 2vw);
+  }
+  
+  .close-fs{
+    right:0%;
+    bottom:103%;
+  }
 }
 
 @media screen and (max-width:600px){
@@ -353,6 +419,11 @@
   .dots-container{
     bottom:-15%;
   }
+
+  .btn-slider.fullscreen{
+    width: calc(20px + 1.5vw);
+    height: calc(20px + 1.5vw);
+  }
 }
 
 @media screen and (max-width:300px){
@@ -381,4 +452,14 @@
     margin-right:calc(7px + 2vw);
   }
   
+}
+
+
+/* IPAD */
+
+@media screen and (min-width:800px) and (max-width:850px) and (min-height:1100px) and (max-height:1200px){
+  .slider-wrapper.fullscreen{
+    width: 60vmin;
+    height:60%;
+  }
 }

@@ -5,6 +5,7 @@ import './MainContent.css';
 import {ReactComponent as BoyProfil} from '../../assets/main-content-assets/boy-profil.svg';
 import {ReactComponent as BtnLeft} from '../../assets/main-content-assets/chevron-left.svg';
 import {ReactComponent as BtnRight} from '../../assets/main-content-assets/chevron-right.svg';
+import {ReactComponent as CloseFs} from '../../assets/main-content-assets/close-full-screen.svg';
 
 
 
@@ -229,6 +230,8 @@ export default function MainContent() {
 
     useEffect(() => {
       if(displays.stage === "home"){
+        setSlideAnim({index:0, inProgress:false})
+
         setTimeout(() => {
           const bdGroup2 = Array.from(document.querySelectorAll('.bd-item.second-group'));
           bdGroup2.forEach(item => {item.style.display = "block"});
@@ -241,11 +244,11 @@ export default function MainContent() {
     }, [displays])
 
   return (
-    <div className='main-content'>
+    <div className={displays.fullScreen ? 'main-content fullscreen' : 'main-content'} >
       
-        <div className="main-content-container">
+        <div className={displays.fullScreen ? "main-content-container fullscreen" : "main-content-container"}>
 
-        {(displays.stage === "bdStart" || displays.stage === "bdMid") && 
+        {((displays.stage === "bdStart" || displays.stage === "bdMid") && !displays.fullScreen) && 
         <div className="bd-du-jour">
             <p><span>Disponible gratuitement :</span><span>La bd du jour</span></p>
         </div>}
@@ -277,9 +280,9 @@ export default function MainContent() {
           </div> : displays.stage === "bdStart" && <div ref={homePage}></div>}
           
           {(dataBd.length !== 0 && displays.stage !== "home") && 
-            <div className="slider-wrapper">
+            <div className={displays.fullScreen ? "slider-wrapper fullscreen" : "slider-wrapper"}>
               <div className="slider-container">
-                <div className="slider" style={{transform:`translate(-${slideAnim.index}00%)`}}>
+                <div className="slider" style={{transform:`translateX(-${slideAnim.index}00%)`}}>
                   {dataBd[displays.activeKey - 1].bdImages.map(item => (
                   <img 
                   key={uuidv4()}
@@ -292,30 +295,35 @@ export default function MainContent() {
               </div>
 
               <button 
-              className='btn-slider btn-left' 
+              className={displays.fullScreen ? 'btn-slider btn-left fullscreen' : 'btn-slider btn-left'}
               style={{display:slideAnim.index === 0 && "none"}}
               onClick={() => moveSlide('left')}
               >
                   <BtnLeft className="chevron" />
               </button>
               <button 
-              className='btn-slider btn-right'
+              className={displays.fullScreen ? 'btn-slider btn-right fullscreen' : 'btn-slider btn-right'}
               style={{display:slideAnim.index === dataBd[displays.activeKey - 1].bdImages.length - 1 && "none"}}
               onClick={() => moveSlide('right')}
               >
                   <BtnRight className="chevron" />
               </button>
 
-              <div className="dots-container">
+              <div className="dots-container" style={{display:displays.fullScreen && 'none'}} >
                 {Array.from({length:dataBd[displays.activeKey - 1].bdImages.length}).map((item, index) => (
                   <button key={uuidv4()} className={slideAnim.index === index ? "dot active" : "dot"} onClick={() => moveDot(index)}></button>
                 ))}
               </div>
+
+              {displays.fullScreen && <div className="close-fs" onClick={() => handleDisplays('full-screen','close-fs')}>
+                <CloseFs />
+              </div>}
             </div>
           }
 
-          {(displays.stage === "bdEnd" || displays.fullScreen) && <div
+          {(displays.stage === "bdEnd") && <div
           className='aside-bd-container'
+          style={{display:displays.fullScreen && 'none'}}
           ref={asideBd}
           onWheel={e => wheelFunction(e, 'aside')}
           onTouchStart={(e) => asideTouchStartFunction(e)}

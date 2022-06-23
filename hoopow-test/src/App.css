@@ -70,6 +70,10 @@ button{
   overflow: hidden;
   position: relative;
 }
+.main-content.fullscreen{
+  width:100%;
+  padding-right:0;
+}
 
 
 /* ? Media queries */

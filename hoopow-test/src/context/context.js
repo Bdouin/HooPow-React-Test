@@ -41,7 +41,7 @@ export default function ContextProvider(props) {
         if(type === 'full-screen'){
             if(value === 'active'){
                 newDisplays.fullScreen = true;
-            } else{
+            } else if(value === 'close-fs'){
                 newDisplays.fullScreen = false;
             }
         }
