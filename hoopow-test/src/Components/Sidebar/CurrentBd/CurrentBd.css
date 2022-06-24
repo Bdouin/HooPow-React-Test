@@ -1,0 +1,26 @@
+.current-bd{
+    width: 70%;
+    margin:0 auto calc(-30px - 1.5vw);
+    text-align: center;
+}
+.current-bd img{
+    width: 100%;
+    border-radius:3px;
+}
+.current-bd h3{
+    font-size: calc(10px + 0.5vw);
+}
+
+
+
+/* ? Media queries */
+
+@media screen and (max-width:600px){
+    .current-bd{
+        width: 80%;
+    }
+
+    .current-bd h3{
+        font-size: calc(7px + 0.5vw);
+    }
+}

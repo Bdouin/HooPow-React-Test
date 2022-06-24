@@ -1,0 +1,187 @@
+/* home */
+
+.subscription-container-home{
+    padding: 10px 10px 5px;
+    text-align: center;
+}
+
+.subscription-container-home p{
+    text-transform: uppercase;
+    width: 100%;
+    font-size: calc(8px + 1vw);
+    margin-bottom: 1vw;
+}
+
+.production-container{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.production-container a{
+    flex-basis:30%;
+    margin:calc(2px + 0.1vw)
+}
+.production-container a img{
+    width: 100%;
+}
+
+/* bdstart */
+
+.subscription-container-bdstart{
+    height:calc(25% + 10vw);
+    background-color: #51aabc;
+    border-radius: 15px;
+    position: relative;
+    padding: 10px;
+    text-align: center;
+}
+
+.subscription-container-bdstart p{
+    text-transform: uppercase;
+}
+.subscription-container-bdstart p:nth-child(1){
+    width: 90%;
+    margin: 0 auto;
+    font-size: calc(8px + 0.8vw);
+}
+.subscription-container-bdstart a{
+    display: inline-block;
+    margin:5px auto;
+    padding:2px 5px;
+    background-color:#ffc600;
+    color:#000;
+    text-transform: uppercase;
+    font-size: calc(8px + 0.6vw);
+    font-weight: 400;
+    border-radius: 2px;
+}
+.subscription-container-bdstart a:hover, .subscription-container-bdstart a:active{
+    background-color:#f3bf02;
+}
+.subscription-container-bdstart p:nth-child(3){
+    position: absolute;
+    bottom:30%;
+    left:15%;
+    font-size: calc(5px + 0.5vw);
+}
+.boy-subscribe{
+    position: absolute;
+    right:0;
+    bottom:-1%;
+    width:calc(20% + 5vw);
+    height:calc(40% + 5vw);
+}
+
+
+/* ? Media queries */
+
+@media screen and (max-width:1100px){
+    .subscription-container-bdstart{
+        height:calc(25% + 10vw);
+    }
+}
+
+@media screen and (max-width:800px){
+    .production-container a{
+        flex-basis:28%;
+    }
+}
+
+@media screen and (max-width:600px){
+    .subscription-container-bdstart{
+        padding:6px;
+    }
+
+    .subscription-container-bdstart p:nth-child(1){
+        font-size: calc(6px + 0.8vw);
+    }
+
+    .subscription-container-bdstart p:nth-child(3){
+        bottom:20%;
+        left:7%;
+        font-size: calc(4px + 0.5vw);
+    }
+    .boy-subscribe{
+        bottom:-3%;
+    }
+}
+
+@media screen and (max-width:450px){
+    .subscription-container-bdstart a{
+        padding:1px 3px;
+        margin:0px auto;
+        text-transform: uppercase;
+        font-size: calc(6px + 0.6vw);
+    }
+
+    .subscription-container-bdstart p:nth-child(1){
+        width: 100%;
+        font-size: calc(6px + 0.5vw);
+    }
+
+    .production-container a{
+        flex-basis:25%;
+        margin:calc(1.5px + 0.1vw)
+    }
+
+    .subscription-container-home{
+        padding: 10px 2px 0;
+    }
+    
+    .subscription-container-home p{
+        font-size: calc(7px + 1vw);
+        margin-bottom: 1.5vw;
+    }
+}
+
+
+/* IPAD */
+
+@media screen and (min-width:800px) and (max-width:850px) and (min-height:1100px) and (max-height:1200px){
+    .subscription-container-bdstart{
+        height: 40%;
+        padding: 15px;
+    }
+    .subscription-container-bdstart p:nth-child(1){
+        font-size: calc(12px + 0.8vw);
+    }
+    .subscription-container-bdstart a{
+        padding:3px 9px;
+        font-size: calc(10px + 0.6vw);
+    }
+    .subscription-container-bdstart p:nth-child(3){
+        left:7%;
+        font-size: calc(7px + 0.5vw);
+    }
+    .boy-subscribe{
+        bottom:-4%;
+        width:calc(30% + 5vw);
+        height:calc(50% + 5vw);
+    }
+}
+
+/* IPAD MINI */
+
+
+@media screen and (min-width:700px) and (max-width:800px) and (min-height:1000px) and (max-height:1050px){
+    .subscription-container-bdstart{
+        height: 40%;
+        padding: 15px;
+    }
+    .subscription-container-bdstart p:nth-child(1){
+        font-size: calc(10px + 0.8vw);
+    }
+    .subscription-container-bdstart a{
+        padding:3px 9px;
+        font-size: calc(10px + 0.6vw);
+    }
+    .subscription-container-bdstart p:nth-child(3){
+        left:7%;
+        font-size: calc(7px + 0.5vw);
+    }
+    .boy-subscribe{
+        bottom:-3.5%;
+        width:calc(30% + 5vw);
+        height:calc(50% + 5vw);
+    }
+}

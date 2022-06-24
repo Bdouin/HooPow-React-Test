@@ -1,0 +1,227 @@
+/* ? general */
+
+.menu-logo-container{
+    display: flex;
+    justify-content:center;
+    position: relative;
+}
+.menu, .logo{
+    margin:0 5px;
+}
+
+/* ? Navigation toggle */
+
+.navigationCheckbox{
+    display: none;
+}
+
+.navigationBtn{
+    display: flex;
+    width:calc(20px + 2vw);
+    height:calc(20px + 2vw);
+    background-color: #fff;
+    cursor: pointer;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.navigationIcon{
+    margin: auto;
+    position: relative;
+    width: 50%;
+    height: 2px;
+    background-color:#51aabc;
+    display: inline-block;
+}
+.navigationIcon::before, .navigationIcon::after{
+    content:'';
+    width:100%;
+    height: 2px;
+    background-color:#51aabc;
+    position:absolute;
+    left:0;
+    transition: transform 0.3s, top 0.3s 0.1s;
+}
+.navigationIcon::before{
+    top:-8px;
+}
+.navigationIcon::after{
+    top:8px;
+}
+
+.nav{
+    position: absolute;
+    top:120%;
+    left:0;
+    width: 100%;
+    height: 0;
+    background-color: #fff;
+    border-radius: 15px;
+    transition: height 0.5s;
+    text-transform: uppercase;
+    font-family: 'Karla Extrabold', Arial, Helvetica, sans-serif;
+    padding:0 10px;
+    overflow: hidden;
+    z-index: 500;
+}
+
+.links-bloc a{
+    margin:calc(10px + 0.6vw) 0;
+    text-align: center;
+    width: 100%;
+    background-color: #dfdfdf;
+    padding: 7px;
+    border-radius: 20px;
+    color:#333;
+    font-size: calc(8px + 0.4vw);
+}
+.links-bloc a.active{
+    background-color: #333;
+    color:#dfdfdf
+}
+.links-bloc a:hover{
+    background-color: #333;
+    color:#dfdfdf
+}
+
+.contact-bloc{
+    margin:25px 0;
+    font-size: calc(8px + 0.4vw);
+}
+.contact{
+    color:#555;
+    display: flex;
+    align-items: center;
+    margin-bottom: 7px;
+}
+.contact:nth-child(2){
+    margin-bottom: 12px;
+}
+.contact svg{
+    margin-right: 15px;
+    width:calc(25px + 1.5vw);
+    height:calc(25px + 1.5vw);
+}
+
+/* animations */
+
+.navigationCheckbox:checked ~ .nav{
+    height:85vh;
+    max-height:600px;
+}
+
+.navigationCheckbox:checked + .navigationBtn .navigationIcon{
+    background-color: transparent;
+}
+.navigationCheckbox:checked + .navigationBtn .navigationIcon::before{
+    top:0;
+    transform: rotate(45deg);
+    transition: transform 0.3s;
+}
+.navigationCheckbox:checked + .navigationBtn .navigationIcon::after{
+    top:0;
+    transform: rotate(-45deg);
+    transition: transform 0.3s;
+}
+
+.logo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo img{
+    width: 90%;
+}
+
+
+/* ? Media queries */
+
+
+@media screen and (max-width:1100px){
+    .navigationIcon::before{
+        top:-6px;
+    }
+    .navigationIcon::after{
+        top:6px;
+    }
+}
+
+@media screen and (max-width:800px){
+    .navigationCheckbox:checked ~ .nav{
+        height:75vh;
+        max-height:500px;
+    }
+}
+
+
+@media screen and (max-width:600px){
+    .logo img{
+        width: 100%;
+    }
+
+    .navigationIcon::before{
+        top:-5px;
+    }
+    .navigationIcon::after{
+        top:5px;
+    }
+
+    .nav{
+        width:calc(100% + 15px);
+    }
+
+    .navigationCheckbox:checked ~ .nav{
+        height:70vh;
+        max-height:400px;
+    }
+
+    .contact-bloc{
+        margin:20px 0;
+        font-size: calc(6px + 0.4vw);
+    }
+
+    .links-bloc a{
+        margin:calc(10px + 0.6vw) 0;
+        padding: 5px;
+        border-radius: 15px;
+        font-size: calc(5px + 0.4vw);
+    }
+}
+
+@media screen and (max-width:450px){
+    .navigationCheckbox:checked ~ .nav{
+        height:45vh;
+        max-height:350px;
+    }
+
+    .contact-bloc{
+        margin:12px 0;
+        font-size: calc(4px + 0.4vw);
+    }
+
+    .contact svg{
+        margin-right: 10px;
+        width:calc(15px + 1.5vw);
+        height:calc(15px + 1.5vw);
+    }
+
+    .navigationBtn{
+        width:calc(15px + 2vw);
+        height:calc(15px + 2vw);
+        border-radius: 5px;
+    }
+
+    .navigationIcon{
+        height: 1px;
+    }
+    .navigationIcon::before, .navigationIcon::after{
+        height: 1px;
+    }
+    .navigationIcon::before{
+        top:-4px;
+    }
+    .navigationIcon::after{
+        top:4px;
+    }
+}

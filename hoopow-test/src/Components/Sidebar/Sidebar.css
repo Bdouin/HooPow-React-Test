@@ -1,0 +1,167 @@
+/* ? General */
+
+.sidebar a{
+    font-weight: bold;
+}
+
+.sidebar hr{
+    border:none;
+    height: 1px;
+    background:rgba(0,0,0,0.2);
+}
+
+/* muslimshow */
+
+.muslimshow{
+    display: block;
+    width: 90%;
+    max-height: calc(10vw + 20px);
+    margin:calc(5px + 1.5vw) auto;
+}
+
+/* Bloc btns */
+
+.btns-container{
+    margin:calc(15px + 0.5vw) 0 calc(20px + 2vw);
+}
+
+.btns-container button{
+    display: block;
+    background:#000;
+    color:#fff;
+    text-transform: uppercase;
+}
+
+.btns-container span{
+    display: block;
+}
+
+.btn-share{
+    margin:0 auto calc(20px + 2vw);
+    font-size:12px;
+}
+.share{
+    width: 80%;
+}
+
+button.btn-home-fs{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin:15px auto;
+    border:2px solid #fff;
+    width: 80%;
+    padding:calc(5px + 0.2vw);
+    border-radius: 50px;
+    font-size:calc(8px + 0.5vw);
+}
+.home-btn, .full-screen{
+    width: calc(5px + 1vw);
+    height: calc(5px + 1vw);
+}
+button.btn-home-fs > *{
+    margin:0 5px
+}
+
+
+/* ? Media queries */
+
+@media screen and (max-width:1100px){
+    .muslimshow{
+        display: block;
+        width: 80%;
+        margin:calc(5px + 1vw) auto;
+    }
+
+    .btn-share{
+        margin:0 auto calc(40px + 2.5vw);
+    }
+    .share{
+        width:70%;
+    }
+    .btn-share span{
+        margin-top:-5px;
+    }
+}
+
+@media screen and (max-width:800px){
+    .btn-share span{
+        margin-top:-10px;
+    }
+    .share{
+        width:55%;
+    }
+
+    .btn-share{
+        margin:0 auto calc(20px + 2vw);
+        font-size:10px;
+    }
+    
+}
+
+
+@media screen and (max-width:600px){
+    button.btn-home-fs{
+        margin:12px auto;
+        width: 95%;
+        padding:calc(5px + 0.1vw);
+        font-size:calc(6px + 0.5vw);
+    }
+    .home-btn, .full-screen{
+        width: calc(5px + 1.5vw);
+        height: calc(5px + 1.5vw);
+    }
+    button.btn-home-fs > *{
+        margin:0 3px;
+    
+    }
+}
+
+@media screen and (max-width:450px){
+    .btn-share span{
+        margin-top:-15px;
+    }
+    .share{
+        width:35%;
+    }
+    .btn-share{
+        margin:0 auto calc(20px + 2.5vw);
+        font-size:8px;
+    }
+    button.btn-home-fs{
+        width: 100%;
+        padding:calc(3px + 0.1vw);
+    }
+}
+
+
+/* IPAD */
+
+@media screen and (min-width:800px) and (max-width:850px) and (min-height:1100px) and (max-height:1200px){
+    .btn-share{
+        margin:0 auto calc(60px + 2.5vw);
+        font-size:12px;
+    }
+    .share{
+        width:75%;
+    }
+    .btn-share span{
+        margin-top:0px;
+    }
+}
+
+/* IPAD MINI */
+
+
+@media screen and (min-width:700px) and (max-width:800px) and (min-height:1000px) and (max-height:1050px){
+    .btn-share{
+        margin:0 auto calc(60px + 2.5vw);
+        font-size:12px;
+    }
+    .share{
+        width:75%;
+    }
+    .btn-share span{
+        margin-top:0px;
+    }
+}
