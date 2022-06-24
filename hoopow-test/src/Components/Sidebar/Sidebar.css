@@ -10,17 +10,6 @@
     background:rgba(0,0,0,0.2);
 }
 
-/* ? Menu et Logo */
-
-.menu-logo-container{
-    display: flex;
-    justify-content:center;
-    position: relative;
-}
-.menu, .logo{
-    margin:0 5px;
-}
-
 /* muslimshow */
 
 .muslimshow{
@@ -28,222 +17,6 @@
     width: 90%;
     max-height: calc(10vw + 20px);
     margin:calc(5px + 1.5vw) auto;
-}
-
-/* abonnement */
-
-/* home */
-
-.subscription-container-home{
-    padding: 10px 10px 5px;
-    text-align: center;
-}
-
-.subscription-container-home p{
-    text-transform: uppercase;
-    width: 100%;
-    font-size: calc(8px + 1vw);
-    margin-bottom: 1vw;
-}
-
-.production-container{
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-}
-.production-container a{
-    flex-basis:30%;
-    margin:calc(2px + 0.1vw)
-}
-.production-container a img{
-    width: 100%;
-}
-
-/* bdstart */
-
-.subscription-container-bdstart{
-    height:calc(25% + 10vw);
-    background-color: #51aabc;
-    border-radius: 15px;
-    position: relative;
-    padding: 10px;
-    text-align: center;
-}
-
-.subscription-container-bdstart p{
-    text-transform: uppercase;
-}
-.subscription-container-bdstart p:nth-child(1){
-    width: 90%;
-    margin: 0 auto;
-    font-size: calc(8px + 0.8vw);
-}
-.subscription-container-bdstart a{
-    display: inline-block;
-    margin:5px auto;
-    padding:2px 5px;
-    background-color:#ffc600;
-    color:#000;
-    text-transform: uppercase;
-    font-size: calc(8px + 0.6vw);
-    font-weight: 400;
-    border-radius: 2px;
-}
-.subscription-container-bdstart a:hover, .subscription-container-bdstart a:active{
-    background-color:#f3bf02;
-}
-.subscription-container-bdstart p:nth-child(3){
-    position: absolute;
-    bottom:30%;
-    left:15%;
-    font-size: calc(5px + 0.5vw);
-}
-.boy-subscribe{
-    position: absolute;
-    right:0;
-    bottom:-1%;
-    width:calc(20% + 5vw);
-    height:calc(40% + 5vw);
-}
-
-/* Current bd */
-
-.current-bd{
-    width: 70%;
-    margin:0 auto calc(-30px - 1.5vw);
-    text-align: center;
-}
-.current-bd img{
-    width: 100%;
-    border-radius:3px;
-}
-.current-bd h3{
-    font-size: calc(10px + 0.5vw);
-}
-
-/* ? Navigation toggle */
-
-.navigationCheckbox{
-    display: none;
-}
-
-.navigationBtn{
-    display: flex;
-    width:calc(20px + 2vw);
-    height:calc(20px + 2vw);
-    background-color: #fff;
-    cursor: pointer;
-    border-radius: 10px;
-    text-align: center;
-}
-
-.navigationIcon{
-    margin: auto;
-    position: relative;
-    width: 50%;
-    height: 2px;
-    background-color:#51aabc;
-    display: inline-block;
-}
-.navigationIcon::before, .navigationIcon::after{
-    content:'';
-    width:100%;
-    height: 2px;
-    background-color:#51aabc;
-    position:absolute;
-    left:0;
-    transition: transform 0.3s, top 0.3s 0.1s;
-}
-.navigationIcon::before{
-    top:-8px;
-}
-.navigationIcon::after{
-    top:8px;
-}
-
-.nav{
-    position: absolute;
-    top:120%;
-    left:0;
-    width: 100%;
-    height: 0;
-    background-color: #fff;
-    border-radius: 15px;
-    transition: height 0.5s;
-    text-transform: uppercase;
-    font-family: 'Karla Extrabold', Arial, Helvetica, sans-serif;
-    padding:0 10px;
-    overflow: hidden;
-    z-index: 500;
-}
-
-.links-bloc a{
-    margin:calc(10px + 0.6vw) 0;
-    text-align: center;
-    width: 100%;
-    background-color: #dfdfdf;
-    padding: 7px;
-    border-radius: 20px;
-    color:#333;
-    font-size: calc(8px + 0.4vw);
-}
-.links-bloc a.active{
-    background-color: #333;
-    color:#dfdfdf
-}
-.links-bloc a:hover{
-    background-color: #333;
-    color:#dfdfdf
-}
-
-.contact-bloc{
-    margin:25px 0;
-    font-size: calc(8px + 0.4vw);
-}
-.contact{
-    color:#555;
-    display: flex;
-    align-items: center;
-    margin-bottom: 7px;
-}
-.contact:nth-child(2){
-    margin-bottom: 12px;
-}
-.contact svg{
-    margin-right: 15px;
-    width:calc(25px + 1.5vw);
-    height:calc(25px + 1.5vw);
-}
-
-/* animations */
-
-.navigationCheckbox:checked ~ .nav{
-    height:85vh;
-    max-height:600px;
-}
-
-.navigationCheckbox:checked + .navigationBtn .navigationIcon{
-    background-color: transparent;
-}
-.navigationCheckbox:checked + .navigationBtn .navigationIcon::before{
-    top:0;
-    transform: rotate(45deg);
-    transition: transform 0.3s;
-}
-.navigationCheckbox:checked + .navigationBtn .navigationIcon::after{
-    top:0;
-    transform: rotate(-45deg);
-    transition: transform 0.3s;
-}
-
-.logo{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.logo img{
-    width: 90%;
 }
 
 /* Bloc btns */
@@ -294,18 +67,6 @@ button.btn-home-fs > *{
 /* ? Media queries */
 
 @media screen and (max-width:1100px){
-    .subscription-container-bdstart{
-        height:calc(25% + 10vw);
-
-    }
-
-    .navigationIcon::before{
-        top:-6px;
-    }
-    .navigationIcon::after{
-        top:6px;
-    }
-
     .muslimshow{
         display: block;
         width: 80%;
@@ -324,16 +85,6 @@ button.btn-home-fs > *{
 }
 
 @media screen and (max-width:800px){
-    .navigationCheckbox:checked ~ .nav{
-        height:75vh;
-        max-height:500px;
-
-    }
-
-    .production-container a{
-        flex-basis:28%;
-    }
-
     .btn-share span{
         margin-top:-10px;
     }
@@ -350,63 +101,6 @@ button.btn-home-fs > *{
 
 
 @media screen and (max-width:600px){
-    .subscription-container-bdstart{
-        padding:6px;
-    }
-
-    .logo img{
-        width: 100%;
-    }
-
-    .subscription-container-bdstart p:nth-child(1){
-        font-size: calc(6px + 0.8vw);
-    }
-
-    .subscription-container-bdstart p:nth-child(3){
-        bottom:20%;
-        left:7%;
-        font-size: calc(4px + 0.5vw);
-    }
-    .boy-subscribe{
-        bottom:-3%;
-    }
-
-    .navigationIcon::before{
-        top:-5px;
-    }
-    .navigationIcon::after{
-        top:5px;
-    }
-
-    .nav{
-        width:calc(100% + 15px);
-    }
-
-    .navigationCheckbox:checked ~ .nav{
-        height:70vh;
-        max-height:400px;
-    }
-
-    .contact-bloc{
-        margin:20px 0;
-        font-size: calc(6px + 0.4vw);
-    }
-
-    .links-bloc a{
-        margin:calc(10px + 0.6vw) 0;
-        padding: 5px;
-        border-radius: 15px;
-        font-size: calc(5px + 0.4vw);
-    }
-
-    .current-bd{
-        width: 80%;
-    }
-
-    .current-bd h3{
-        font-size: calc(7px + 0.5vw);
-    }
-
     button.btn-home-fs{
         margin:12px auto;
         width: 95%;
@@ -424,67 +118,6 @@ button.btn-home-fs > *{
 }
 
 @media screen and (max-width:450px){
-    .subscription-container-bdstart a{
-        padding:1px 3px;
-        margin:0px auto;
-        text-transform: uppercase;
-        font-size: calc(6px + 0.6vw);
-    }
-
-    .subscription-container-bdstart p:nth-child(1){
-        width: 100%;
-        font-size: calc(6px + 0.5vw);
-    }
-
-    .navigationCheckbox:checked ~ .nav{
-        height:45vh;
-        max-height:350px;
-    }
-
-    .contact-bloc{
-        margin:12px 0;
-        font-size: calc(4px + 0.4vw);
-    }
-
-    .contact svg{
-        margin-right: 10px;
-        width:calc(15px + 1.5vw);
-        height:calc(15px + 1.5vw);
-    }
-
-    .production-container a{
-        flex-basis:25%;
-        margin:calc(1.5px + 0.1vw)
-    }
-
-    .subscription-container-home{
-        padding: 10px 2px 0;
-    }
-    
-    .subscription-container-home p{
-        font-size: calc(7px + 1vw);
-        margin-bottom: 1.5vw;
-    }
-
-    .navigationBtn{
-        width:calc(15px + 2vw);
-        height:calc(15px + 2vw);
-        border-radius: 5px;
-    }
-
-    .navigationIcon{
-        height: 1px;
-    }
-    .navigationIcon::before, .navigationIcon::after{
-        height: 1px;
-    }
-    .navigationIcon::before{
-        top:-4px;
-    }
-    .navigationIcon::after{
-        top:4px;
-    }
-
     .btn-share span{
         margin-top:-15px;
     }
@@ -505,27 +138,6 @@ button.btn-home-fs > *{
 /* IPAD */
 
 @media screen and (min-width:800px) and (max-width:850px) and (min-height:1100px) and (max-height:1200px){
-    .subscription-container-bdstart{
-        height: 40%;
-        padding: 15px;
-    }
-    .subscription-container-bdstart p:nth-child(1){
-        font-size: calc(12px + 0.8vw);
-    }
-    .subscription-container-bdstart a{
-        padding:3px 9px;
-        font-size: calc(10px + 0.6vw);
-    }
-    .subscription-container-bdstart p:nth-child(3){
-        left:7%;
-        font-size: calc(7px + 0.5vw);
-    }
-    .boy-subscribe{
-        bottom:-4%;
-        width:calc(30% + 5vw);
-        height:calc(50% + 5vw);
-    }
-
     .btn-share{
         margin:0 auto calc(60px + 2.5vw);
         font-size:12px;
@@ -542,27 +154,6 @@ button.btn-home-fs > *{
 
 
 @media screen and (min-width:700px) and (max-width:800px) and (min-height:1000px) and (max-height:1050px){
-    .subscription-container-bdstart{
-        height: 40%;
-        padding: 15px;
-    }
-    .subscription-container-bdstart p:nth-child(1){
-        font-size: calc(10px + 0.8vw);
-    }
-    .subscription-container-bdstart a{
-        padding:3px 9px;
-        font-size: calc(10px + 0.6vw);
-    }
-    .subscription-container-bdstart p:nth-child(3){
-        left:7%;
-        font-size: calc(7px + 0.5vw);
-    }
-    .boy-subscribe{
-        bottom:-3.5%;
-        width:calc(30% + 5vw);
-        height:calc(50% + 5vw);
-    }
-
     .btn-share{
         margin:0 auto calc(60px + 2.5vw);
         font-size:12px;
