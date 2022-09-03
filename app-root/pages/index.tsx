@@ -36,7 +36,7 @@ const Index: NextPage = () => {
                 <div
                     id={'mainContent'}/*Not in use for now*/
                     ref={mainContent}
-                    className={'flex flex-row max-h-full max-w-full aspect-16/9 w-full bg-blue-700 overflow-hidden items-stretch'}>
+                    className={'flex flex-row max-h-full max-w-full aspect-16/9 w-full bg-blue-700 overflow-hidden items-stretch font-normal font-primary'}>
                     {/* Whereas the inner has a fixed width and a varying height depending on the same aspect ratio*/}
                     <LeftNavBar mainHeight={getHeight()}/>
                     <Home/>

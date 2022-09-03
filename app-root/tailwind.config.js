@@ -19,6 +19,10 @@ module.exports = {
                 '7/9': '88%'
             }
         },
+        fontFamily: {
+            'primary': ['"Karla"','"system-ui"','"sans-serif"'],
+            'BD': ['"FredokaOne"','"system-ui"','"sans-serif"']
+        }
     },
     plugins: [],
 }

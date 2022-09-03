@@ -6,27 +6,35 @@ interface Props {
 
 const LeftNavBar: NextPage<Props> = ({mainHeight}) => {
     return (
-        <div className={'w-2/9 m-0 bg-gray-600 px-[1.15%] flex flex-col text-center'}>
+        <div className={'w-2/9 m-0 font-primary bg-gray-600 px-[1.15%] flex flex-col text-center'}>
             <div className={'w-full block py-3'}>
                 <div className={'w-1/6 inline-block'}>|||</div>
-                <div className={'inline-block border-'}>HOO POW</div>
+                <div className={'inline-block font-BD'}>HOO POW</div>
             </div>
-            <div className={"w-full block px-[2.8%] bg-[#51aabc] rounded"}>
+            <div className={'w-full flex-grow block flex flex-col justify-between content-center'}>
+                <div className={"w-full block px-[2.8%] bg-[#51aabc] rounded"}>
                 <span className={'block whitespace-nowrap'} style={{
                     fontSize: (mainHeight * 0.02).toString() + 'px',
                     lineHeight: (mainHeight * 0.03).toString() + 'px'
                 }}>
                     Disponible gratuitement :
                 </span>
-                <span className={'block font-bold'}
-                      style={{
-                          fontSize: (mainHeight * 0.027).toString() + 'px',
-                          lineHeight: (mainHeight * 0.03).toString() + 'px'
-                      }}>
+                    <span className={'block font-bold'}
+                          style={{
+                              fontSize: (mainHeight * 0.027).toString() + 'px',
+                              lineHeight: (mainHeight * 0.03).toString() + 'px'
+                          }}>
                     LA BD DU JOUR
                 </span>
+                </div>
+
+                <div>
+                    MUSLIM SHOW
+                </div>
+                <div>
+                    Subscribe
+                </div>
             </div>
-            MUSLIM SHOW
         </div>
     )
 }
