@@ -3,19 +3,34 @@ import Image from "next/image";
 import imgMuslimShow from "../public/assets/img/MUSLIM SHOW.svg"
 import imgHOOPOW from "../public/assets/img/LOGO HOOPOW.svg"
 import imgKid from "../public/assets/img/Image-Kid-227.png"
-import imgHamburgerBG from "../public/assets/img/Hamburger-BG.svg"
+import imgBurgerBG from "../public/assets/img/Burger-BG.svg"
+import imgBurger from "../public/assets/img/Burger.svg"
 import imgHorizontalLine from "../public/assets/img/Horizontal-line.svg"
+import {useState} from "react";
 
 interface Props {
     mainHeight: number;
 }
 
 const LeftNavBar: NextPage<Props> = ({mainHeight}) => {
+    const [sideMenuVisibility, setSideMenuVisibility] = useState(false);
+
+    function getSideMenuVisibility() {
+        return sideMenuVisibility ? 'visible' : 'hidden'
+    }
+
+    function getOppositeSideMenuVisibility() {
+        return !sideMenuVisibility ? 'visible' : 'hidden'
+    }
+
     return (
         <div className={'w-2/9 m-0 font-primary bg-dark px-[1.15%] flex flex-col text-center bg-cover'}>
             <div className={'w-full flex justify-center items-center align-center items-center flex-center mb-[2.5%]'}>
                 <div className={"w-[20%] mr-[5%] text-black flex justify-center items-center flex-center"}>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="67" height="69">
+
+                    <Image src={imgBurger} className={getOppositeSideMenuVisibility()}
+                           onClick={() => setSideMenuVisibility(!sideMenuVisibility)}/>
+                    {/* <svg xmlns="http://www.w3.org/2000/svg" id={'id'}>
                         <g data-name="Group 6323">
                             <path
                                 d="M15 0h37a15 15 0 0 1 15 15v39a15 15 0 0 1-15 15H15A15 15 0 0 1 0 54V15A15 15 0 0 1 15 0z"
@@ -32,13 +47,26 @@ const LeftNavBar: NextPage<Props> = ({mainHeight}) => {
                                     fill="#51aabc" fillRule="evenodd" data-name="Path 10147"/>
                             </g>
                         </g>
-                    </svg>
+                    </svg>*/}
                 </div>
                 <div className={'w-[64%] font-BD grid center'}>
                     <Image alt={'HOO POW'} src={imgHOOPOW}/>
                 </div>
             </div>
-            <div className={'w-full flex-grow block flex flex-col justify-between content-center'}>
+            <div className={'w-full relative flex-grow block flex flex-col justify-between content-center'}>
+                <div className={(sideMenuVisibility?' absolute':'hidden')+' h-[98%] rounded-[5%] bg-gray-600 ease-in-out transition-all z-50 top-[0] left-0 w-full flex-grow overflow:hidden'}>
+                    MENU<br/>
+                    MENU<br/>
+                    MENU<br/>
+                    MENU<br/>
+                    MENU<br/>
+                    MENU<br/>
+                    MENU<br/>
+                    MENU<br/>
+                    MENU<br/>
+                    MENU<br/>
+                    MENU<br/>
+                </div>
                 <div className={"w-full block px-[2.8%] bg-[#51aabc] rounded-[5%]"}
                      style={{
                          paddingTop: (mainHeight * 0.02).toString() + 'px',

@@ -1,12 +1,12 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-  swcMinify: true,
+  swcMinify: true
 }
 
 //module.exports = nextConfig
 module.exports = {
   images: {
-    domains: ['d2hkgoif6etp77.cloudfront.net'],
-  },
+    domains: ['d2hkgoif6etp77.cloudfront.net']
+  }
 }
