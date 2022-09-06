@@ -90,8 +90,8 @@ const LeftNavBar: NextPage<Props> = ({mainHeight}) => {
                 <div className={'w-full'}>
                     <Image alt={'MUSLIM SHOW'} src={imgMuslimShow}/>
                 </div>
-                <div className={"flex flex-col h-[52%] rounded-[7%] justify-between  content-between items-center" +
-                    " bg-[#51aabc] bg-[length:54%_60%] bg-[right_bottom_-6px] bg-no-repeat bg-[url('../public/assets/img/Image-Kid-227.png')]"}>
+                <div className={"flex flex-col h-[52%] rounded-[7%] justify-between  content-between items-center overflow-hidden" +
+                    " bg-[#51aabc] bg-[length:54%_60%] bg-[right_bottom_-3%] bg-no-repeat bg-[url('../public/assets/img/Image-Kid-227.png')]"}>
                     <div
                         className={'flex flex-col pt-[3%]'}
                         style={{
