@@ -7,6 +7,7 @@ import imgBurgerBG from "../public/assets/img/Burger-BG.svg"
 import imgBurger from "../public/assets/img/Burger.svg"
 import imgHorizontalLine from "../public/assets/img/Horizontal-line.svg"
 import {useState} from "react";
+import Link from "next/link";
 
 interface Props {
     mainHeight: number;
@@ -24,13 +25,12 @@ const LeftNavBar: NextPage<Props> = ({mainHeight}) => {
     }
 
     return (
-        <div className={'w-2/9 m-0 font-primary bg-dark px-[1.15%] flex flex-col text-center bg-cover'}>
+        <div className={'w-2/9 m-0 relative font-primary bg-dark px-[1.15%] flex flex-col text-center bg-cover'}>
             <div className={'w-full flex justify-center items-center align-center items-center flex-center mb-[2.5%]'}>
                 <div className={"w-[20%] mr-[5%] text-black flex justify-center items-center flex-center"}>
-
-                    <Image src={imgBurger} className={getOppositeSideMenuVisibility()}
+                    {/*<Image src={imgBurger} className={getOppositeSideMenuVisibility()}
                            onClick={() => setSideMenuVisibility(!sideMenuVisibility)}/>
-                    {/* <svg xmlns="http://www.w3.org/2000/svg" id={'id'}>
+                     <svg xmlns="http://www.w3.org/2000/svg" id={'id'}>
                         <g data-name="Group 6323">
                             <path
                                 d="M15 0h37a15 15 0 0 1 15 15v39a15 15 0 0 1-15 15H15A15 15 0 0 1 0 54V15A15 15 0 0 1 15 0z"
@@ -48,24 +48,21 @@ const LeftNavBar: NextPage<Props> = ({mainHeight}) => {
                             </g>
                         </g>
                     </svg>*/}
+                    <div className={'bg-white relative flex flex-col rounded-[25%] justify-center items-center text-center'} style={{width: (mainHeight * 0.06).toString() + 'px', height:  (mainHeight * 0.06).toString() + 'px'}}
+                         onClick={() => setSideMenuVisibility(!sideMenuVisibility)}>
+                        <span className={(sideMenuVisibility&&'opacity-0 '||'opacity-100')+' ease-in-out duration-300 bg-[#51aabc]  rounded-[20%] my-[3%]'} style={{height: (mainHeight * 0.0045).toString() + 'px',width: (mainHeight * 0.04).toString() + 'px',}}></span>
+                        <span className={(sideMenuVisibility&&'rotate-45 '||'rotate-0 opacity-100')+' ease-in-out duration-300 bg-[#51aabc]  rounded-[20%] my-[3%]'} style={{height: (mainHeight * 0.0045).toString() + 'px',width: (mainHeight * 0.04).toString() + 'px',}}></span>
+                        <span className={(sideMenuVisibility&&'-rotate-45 '||'rotate-0 opacity-100')+' z-10 absolute ease-in-out duration-300 bg-[#51aabc]  rounded-[20%] my-[3%]'} style={{height: (mainHeight * 0.0045).toString() + 'px',width: (mainHeight * 0.04).toString() + 'px',}}></span>
+                        <span className={(sideMenuVisibility&&'opacity-0 '||'opacity-100')+' ease-in-out duration-300 bg-[#51aabc]  rounded-[20%] my-[3%]'} style={{height: (mainHeight * 0.0045).toString() + 'px',width: (mainHeight * 0.04).toString() + 'px',}}></span>
+                    </div>
                 </div>
                 <div className={'w-[64%] font-BD grid center'}>
-                    <Image alt={'HOO POW'} src={imgHOOPOW}/>
+                    <Link href={'/'}><Image alt={'HOO POW'} className={'cursor-pointer'} src={imgHOOPOW}/></Link>
                 </div>
             </div>
-            <div className={'w-full relative flex-grow block flex flex-col justify-between content-center'}>
-                <div className={(sideMenuVisibility?' absolute':'hidden')+' h-[98%] rounded-[5%] bg-gray-600 ease-in-out transition-all z-50 top-[0] left-0 w-full flex-grow overflow:hidden'}>
-                    MENU<br/>
-                    MENU<br/>
-                    MENU<br/>
-                    MENU<br/>
-                    MENU<br/>
-                    MENU<br/>
-                    MENU<br/>
-                    MENU<br/>
-                    MENU<br/>
-                    MENU<br/>
-                    MENU<br/>
+            <div className={'w-full relative flex-grow block flex flex-col justify-between content-center '}>
+                <div
+                    className={(sideMenuVisibility ? '  h-[98%] z-50 ' : ' h-[1px] -z-50 ') + ' absolute duration-700 rounded-[5%] bg-white ease-in-out  top-0 left-0 w-full overflow:hidden'}>
                 </div>
                 <div className={"w-full block px-[2.8%] bg-[#51aabc] rounded-[5%]"}
                      style={{
@@ -90,8 +87,9 @@ const LeftNavBar: NextPage<Props> = ({mainHeight}) => {
                 <div className={'w-full'}>
                     <Image alt={'MUSLIM SHOW'} src={imgMuslimShow}/>
                 </div>
-                <div className={"flex flex-col h-[52%] rounded-[7%] justify-between  content-between items-center overflow-hidden" +
-                    " bg-[#51aabc] bg-[length:54%_60%] bg-[right_bottom_-3%] bg-no-repeat bg-[url('../public/assets/img/Image-Kid-227.png')]"}>
+                <div
+                    className={"flex flex-col h-[52%] rounded-[7%] justify-between  content-between items-center overflow-hidden" +
+                        " bg-[#51aabc] bg-[length:54%_60%] bg-[right_bottom_-3%] bg-no-repeat bg-[url('../public/assets/img/Image-Kid-227.png')]"}>
                     <div
                         className={'flex flex-col pt-[3%]'}
                         style={{
