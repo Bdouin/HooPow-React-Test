@@ -9,10 +9,17 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@types/react-lazy-load-image-component": "^1.5.2",
+    "@types/react-slick": "^0.23.10",
     "date-fns": "^2.29.2",
     "next": "12.2.5",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "react-elastic-carousel": "^0.11.5",
+    "react-lazy-load-image-component": "^1.5.5",
+    "react-slick": "^0.29.0",
+    "slick-carousel": "^1.8.1",
+    "w": "^1.0.1"
   },
   "devDependencies": {
     "@types/node": "18.7.14",

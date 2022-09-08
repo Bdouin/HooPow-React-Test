@@ -25,9 +25,8 @@ const Home: NextPage<props> = ({mainHeight, BDs}) => {
                              className={'w-[25%] h-auto px-[1.7%] py-[0.43%]'}>
                             <Link
                                 href={{
-                                    pathname:
-                                        '/BDs/' + BD.bdKey,
-                                    query: {BD: BD.imageHomepage.toString()},
+                                    pathname: '/BDs/' + BD.bdKey,
+                                    query: {BD: BD.imageHomepage.toString(),name:BD.name,mainHeight:mainHeight},
                                 }}>
                                 <div
                                     className={'text-center flex flex-col  cursor-pointer'}>

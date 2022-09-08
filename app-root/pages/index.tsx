@@ -41,7 +41,7 @@ const Index: NextPage<props> = ({data}) => {
                     ref={mainContent}
                     className={'flex flex-row py-[0.8%] max-h-full max-w-full aspect-16/9 w-full bg-black overflow-hidden items-stretch font-normal font-primary'}>
                     {/* Whereas the inner has a fixed width and a varying height depending on the same aspect ratio*/}
-                    <LeftNavBar mainHeight={getHeight()}/>
+                    <LeftNavBar reading={false} mainHeight={getHeight()}/>
                     <Home mainHeight={getHeight()} BDs={data}/>
                 </div>
             </div>

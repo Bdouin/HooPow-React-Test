@@ -50,10 +50,28 @@ a {
     }
 }
 
-#id {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
+/**Carousel customization**/
+.slick-dots li button::before {
+    font-size: 14px !important;
+    color: white !important;
+}
+
+.slick-slider    {
+    height: 80vh !important;
+    overflow: visible!important;
+}
+.slick-list{
+    height: 100% !important;
+}
+.dots    {
+    height: 10% !important;
+}
+.slick-arrow::before {
+    font-size: 8vh!important;
+}
+.slick-next{
+    right: -6% !important ;
+}
+.slick-prev{
+    left: -12% !important ;
 }
