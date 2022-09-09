@@ -4,11 +4,9 @@ import Image from "next/image";
 import React, {useEffect, useRef, useState} from "react";
 import {useRouter} from "next/router";
 import Slider from "react-slick"
-import {LazyLoadImage} from 'react-lazy-load-image-component';
-// Import css files
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import * as ReactDOM from 'react-dom';
+
 interface props {
     data: any,
     mainHeight: number,
@@ -19,8 +17,16 @@ const BDkey: NextPage<props> = ({data, mainHeight}) => {
     const mainContent = useRef<any>(null);
     const [imageSources, setImageSources] = useState<{ id: number; source: string; }[]>([]);
     const {query} = useRouter();
+    const [afterChange, setAfterChange] = useState(0);
+
+
+    function fctAfterChange(current: React.SetStateAction<number>) {
+        setAfterChange(current)
+    }
+
     const sliderSettings = {
         dots: true, infinite: false, speed: 500, slidesToShow: 1, slidesToScroll: 1,
+        afterChange: (current: any) => fctAfterChange(current),
         appendDots: (dots: any) => (
             <div
                 style={{overflow: "visible", bottom: "0"}}
@@ -45,24 +51,32 @@ const BDkey: NextPage<props> = ({data, mainHeight}) => {
         }
         let BDSlideNumber = 1
         let thereIsMore = true
-        while (thereIsMore && ++BDSlideNumber < 100) {/*So that it does not crash*/
-            await fetch(partialFetchRequest + (BDSlideNumber) + '.jpg', {method: "HEAD"})
-                .then((res) => {
+        while (thereIsMore && BDSlideNumber < 100) {/*So that it does not crash*/
+            await fetch((1 === BDSlideNumber && !startsWithOne) ? ('https://d2hkgoif6etp77.cloudfront.net/' + query.BD) : (partialFetchRequest + (BDSlideNumber) + '.jpg'),
+                {method: "HEAD"})
+                .then((res) => {///@TODO learn about axios
                     if (res.ok) {
-                        console.log(imageSources.length + "- id:" + BDSlideNumber)
-                        setImageSources(imageSources => {
-                            return [...imageSources, {
-                                id: BDSlideNumber, source: partialFetchRequest + (BDSlideNumber) + '.jpg',
-                            }]
-                        })
-                        console.log('#METOO :::' + imageSources.length + "- id:" + BDSlideNumber)
-
+                        updateImageSources(res, BDSlideNumber, partialFetchRequest,startsWithOne)
                     } else thereIsMore = false
                 })
                 .catch(err => {
                     console.log('❌❌❌' + err)
                 });
+
+            BDSlideNumber++
         }
+    }
+
+    function updateImageSources(res: Response, BDSlideNumber: string | number, partialFetchRequest: string,startsWithOne:boolean) {
+        //console.log("BDSlideNumber:" + BDSlideNumber)
+        setImageSources(/*@ts-ignore*/
+                imageSources => {
+            //console.log("For the " + BDSlideNumber + "th time: " + [...imageSources])
+            return [...imageSources, {
+                id: BDSlideNumber, source:(1 === BDSlideNumber && !startsWithOne) ? ('https://d2hkgoif6etp77.cloudfront.net/' + query.BD):( partialFetchRequest + (BDSlideNumber) + '.jpg'),
+            }]
+        })
+        //console.log({            id: BDSlideNumber, source: partialFetchRequest + (BDSlideNumber) + '.jpg',})
     }
 
     useEffect(() => {
@@ -70,9 +84,9 @@ const BDkey: NextPage<props> = ({data, mainHeight}) => {
         window.addEventListener("resize", updateHeight);
 
         if (query.BD && 0 == imageSources.length/*To avoid an infinite loop*/) {
-            setImageSources(imageSources => {
-                return [...imageSources, {id: 1, source: 'https://d2hkgoif6etp77.cloudfront.net/' + query.BD}];
-            })
+            /* setImageSources(imageSources => {
+                 return [...imageSources, {id: 1, source: 'https://d2hkgoif6etp77.cloudfront.net/' + query.BD}];
+             })*/
             findSlides().then(() => {
                 return () => {
                     window.removeEventListener("resize", updateHeight);
@@ -94,10 +108,11 @@ const BDkey: NextPage<props> = ({data, mainHeight}) => {
     }
 
     function iAmFocusable(id: number) {
-        console.log(id)
+        //console.log(id)
         return undefined;
     }
-    //console.log(imageSources)
+
+    //console.log(getImageSources())
     return (
         <div className="bg-black w-screen h-screen flex  overflow-hidden items-center content-center justify-center">
             <div
@@ -106,7 +121,7 @@ const BDkey: NextPage<props> = ({data, mainHeight}) => {
                     id={'mainContent'}
                     ref={mainContent}
                     className={'flex flex-row py-[0.8%] max-h-full max-w-full aspect-16/9 w-full bg-black overflow-hidden items-stretch font-normal font-primary'}>
-                    <LeftNavBar reading={true} mainHeight={getHeight()}/>
+                    <LeftNavBar currentSlide={afterChange} reading={true} mainHeight={getHeight()}/>
                     <div
                         className={'relative w-7/9 m-0 p-0 rounded-[1.3%] bg-gradient-to-b from-[rgb(47,47,47)] to-[rgb(4,4,4)] bg-fixed overflow-auto'}>
 
@@ -139,7 +154,7 @@ const BDkey: NextPage<props> = ({data, mainHeight}) => {
                                         {imageSources.map((imageSource: any) => {
                                             return (
                                                 <Image key={imageSource.id}
-                                                       id={"slide"+imageSource.id.toString()}
+                                                       id={"slide" + imageSource.id.toString()}
                                                        onFocus={iAmFocusable(imageSource.id)}
                                                        src={imageSource.source}
                                                        alt={""}
