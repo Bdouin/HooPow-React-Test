@@ -67,7 +67,8 @@ const LeftNavBar: NextPage<Props> = ({mainHeight, reading, currentSlide}) => {
                         <Link href={'/'}><Image alt={'HOO POW'} className={'cursor-pointer'} src={imgHOOPOW}/></Link>
                     </div>
                 </div>
-                <div className={'w-full relative flex-grow block flex flex-col justify-between content-center '}>
+                <div
+                    className={'w-full relative flex-grow block flex flex-col justify-between content-center '}>
                     <div
                         className={(sideMenuVisibility ? '  h-[98%] z-50 ' : ' h-[1px] -z-50 ') + ' absolute flex flex-col text-gray-700 duration-700 bg-white ' +
                             ' px-[6%] py-[10%] ease-in-out  font-black top-0 left-0 w-full overflow:auto'}
@@ -206,24 +207,26 @@ const LeftNavBar: NextPage<Props> = ({mainHeight, reading, currentSlide}) => {
                     </div>
                     <div
                         className={(!reading || currentSlide === 0) ? "hidden" : "flex flex-col h-[52%] justify-between  content-between items-center text-white text-center"}>
-                        <div className={'flex flex-col justify-center'}>
-                            <div className={'flex flex-col items-center'}>
-                                <div className={'w-[45%] text-center grid items-center'}>
+                        <div className={'flex flex-col justify-center w-full'}>
+                            <div className={'flex flex-col items-center w-full'}>
+                                <div className={'w-[30%] text-center grid items-center  cursor-pointer'}>
                                     <Image width={"100px"} height={"100px"} src={imgShare} alt={'->'}/>
                                 </div>
-                                <span>
-                                Partager
-                            </span>
+                                <span
+                                    className={' cursor-pointer'}
+                                    style={{fontSize: (mainHeight * 0.024).toString() + "px",}}>
+                                    Partager
+                                </span>
                             </div>
                         </div>
-                        <div className={'flex flex-col items-center text-left self-start justify-start   px-[8%]'}>
+                        <div className={'flex flex-col w-full text-left self-start justify-start   px-[8%]'}
+                             style={{fontSize: (mainHeight * 0.024).toString() + "px",}}>
                             <button onClick={() => setFullScreen(!fullScreen)}>
                                 <div
-                                    className={"flex flex-row items-center self-start justify-start px-[8%] my-[3%] cursor-pointer"}
+                                    className={"flex flex-row w-full items-center self-start justify-start px-[8%] my-[3%] cursor-pointer"}
                                     style={{borderColor: "white", borderWidth: '0.7vh', borderRadius: "2.5vw"}}
                                 >
-                                    <div className={'w-[20%] mt-[3%] mr-[7%]'}
-                                         style={{borderColor: "white"}}>
+                                    <div className={'w-[20%] mt-[4%] mr-[7%]'}>
                                         <Image width={"100px"} height={"100px"}
                                                src={imgFullScreenMode}
                                                alt={''}/>
@@ -235,10 +238,10 @@ const LeftNavBar: NextPage<Props> = ({mainHeight, reading, currentSlide}) => {
                             </button>
                             <Link href={'/'}>
                                 <div
-                                    className={"flex flex-row  items-center self-start justify-start px-[8%] cursor-pointer"}
+                                    className={"flex flex-row w-full items-center self-start justify-start px-[8%] cursor-pointer"}
                                     style={{borderColor: "white", borderWidth: '0.7vh', borderRadius: "2.5vw"}}>
 
-                                    <div className={'w-[20%] mr-[12%]'}>
+                                    <div className={'w-[20%] mt-[4%] mr-[12%]'}>
                                         <Image width={"100px"} height={"100px"} src={imgHome}
                                                alt={''}/>
                                     </div>
@@ -251,15 +254,14 @@ const LeftNavBar: NextPage<Props> = ({mainHeight, reading, currentSlide}) => {
                     </div>
                 </div>
             </div>
-            <div className={!fullScreen ? 'hidden' : 'absolute bottom-0 z-50 left-[15%]'}>
                 <button
+                    className={!fullScreen?'hidden':'absolute bottom-[50%] top-[50%] left-[2%] w-[7%] z-50'}
                     onClick={() => {
-                        console.log(fullScreen)
                         setFullScreen(!fullScreen)
                     }}>
                     <Image src={imgQuitFullscreen} alt={"QUIT"}/>
                 </button>
-            </div>
+
         </>)
 }
 

@@ -52,12 +52,15 @@ a {
 
 /**Carousel customization**/
 .slick-dots li button::before {
-    font-size: 14px !important;
+    font-size: 3vmin !important;
     color: white !important;
+    margin: 3vmin!important;
 }
-
+.slick-dots li{
+    width: 5vmin!important;
+}
 .slick-slider    {
-    height: 80vh !important;
+    height: 80% !important;
     overflow: visible!important;
 }
 .slick-list{
@@ -67,11 +70,11 @@ a {
     height: 10% !important;
 }
 .slick-arrow::before {
-    font-size: 8vh!important;
+    font-size: 8vmin!important;
 }
 .slick-next{
-    right: -6% !important ;
+    right: -8% !important ;
 }
 .slick-prev{
-    left: -12% !important ;
+    left: -18% !important ;
 }

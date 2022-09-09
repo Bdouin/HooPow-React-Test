@@ -13,7 +13,6 @@ interface props {
 
 const Home: NextPage<props> = ({mainHeight, BDs}) => {
     var weekName_FR = ['Dimanche', 'Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi']
-    //console.log(BDs)/*@TODO comment in PROD*/
     return (
         <div
             className={'w-7/9 m-0 p-0 rounded-[1.3%] bg-gradient-to-b from-[rgb(47,47,47)] to-[rgb(4,4,4)] bg-fixed overflow-hidden'}>
