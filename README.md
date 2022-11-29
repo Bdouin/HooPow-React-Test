@@ -1,85 +1,70 @@
+# Getting Started with Create React App
 
-<br />
-<p align="center">
-  <a href="#">
-    <img src="https://drive.google.com/uc?export=view&id=1N-tBT1oekTwxdhcmrGo50AX3gyJf0igE" alt="Logo" width="120" height="120">
-  </a>
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Available Scripts
 
+In the project directory, you can run:
 
+### `npm start`
 
-<!-- PROJECT LOGO -->
-# **Assalamu Alaikum!**
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The HooPow family is looking for new talents to help  in achieving what we believe is a lofty goal. 
+The page will reload when you make changes.\
+You may also see any lint errors in the console.
 
-As HooPow, we aim to provide a platform for children to learn their values, acquire a comprehensive understanding of the fundamental tenets of Islam, and  enjoy halaal internet time. 
+### `npm test`
 
-In our platform, they share, they play, they learn, and they grow. 
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-As you can imagine, this endeavor is as demanding as it is rewarding. Hence, if you believe you have the potential to contribute to this endeavor with your React skills, we invite you to join us 💪🏻
+### `npm run build`
 
-We prepared a small and fun challenge for you. Please read the guidelines below and follow the instructions to complete the challenge.
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
-<br />
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
 
-## **Showtime !**
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-<br />
+### `npm run eject`
 
-### **Objective:**
+**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-Please refer to the XD file in the project folder. In the XD file, you will find the visual representation of what we want you to implement. Examine it carefully, make sure that you caught the small details and start hacking! 
+If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-For this purpose, we have provided APIs that you can use to access the data required to populate the project.
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
+You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
+## Learn More
 
-Here are the API endpoints via which you can access the data :
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-- List all [Comic Strips](https://api.jsonbin.io/v3/b/60d15d6c8ea8ec25bd12c083)
-- Details for [Comic Strips](https://api.jsonbin.io/v3/b/60d15d485ed58625fd1658cb)
-- Get the [Images](https://d2hkgoif6etp77.cloudfront.net)
+To learn React, check out the [React documentation](https://reactjs.org/).
 
+### Code Splitting
 
-##  Here we also have prepared a demo video  👇
-<br />
+This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
+### Analyzing the Bundle Size
 
-[![Check the Demo!](https://drive.google.com/uc?export=view&id=1NFNHsg21SXFMWKXsh5p3_8Ydh-pDF3fZ)](https://www.youtube.com/watch?v=5SOiL_jkzBg "Muslim Show Video Demonstration")
+This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
+### Making a Progressive Web App
 
-#### **Steps**
-1. Fork the Project
-2. Create your Feature Branch (`git checkout -b feature/NewFeature`)
-3. Commit your Changes (`git commit -m 'Add some NewFeature'`)
-4. Push to the Branch (`git push origin feature/NewFeature`)
-5. Open a Pull Request
+This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
+### Advanced Configuration
 
-<br />
+This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
 
-### **Please Consider That:**
+### Deployment
 
-<br />
+This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
 
-*  XD file has some components that video does not show. Please make sure you implement the XD file and use video only as final reference.
-> 
-*  You have seven(7) days to finalize the project and submit PR.
-> 
-*  Responsiveness is a vital part to our project.
-> 
-* We expect you to keep fidelity to the provided XD file with regards to design.
-> 
-* You can always ping us if you have any questions.
-> 
-* If you can create a documentation, that would be nice too.
-> 
-* If there is any rendering problems on this page, please refresh the page with cache-reset.(Cmd+shift+r on Mac or Ctrl+shift+r on Windows or Linux)
+### `npm run build` fails to minify
 
-<br />
-<br />
-
-
-
-![banner](https://drive.google.com/uc?export=view&id=1SACvqhDqhHDbIjusKxcJ3aCATtHGqDyn)
+This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
